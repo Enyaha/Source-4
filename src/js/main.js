@@ -24,3 +24,37 @@ $('.wrap').html(
 );
 
 $('.dropdown-toggle').dropdown();
+
+
+$('#trigger').click(() => $('#trigger').createModal({
+    text: {
+        title: 'Modal title',
+        body: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda nam dolorem esse minima quam doloribus est. Sed recusandae mollitia asperiores temporibus distinctio.'
+    },
+    btns: {
+        count: 3,
+        settings: [
+            [
+                'Close',
+                ['btn-danger', 'mr-10'],
+                true
+            ],
+            [
+                'Save changes',
+                ['btn-success', 'mr-10'],
+                false,
+                () => {
+                    alert('Data save');
+                }
+            ],
+            [
+                'Another buttob',
+                ['btn-warning', 'ml-10'],
+                false,
+                () => {
+                    alert('Yeah save');
+                }
+            ]
+        ]
+    }
+}));
